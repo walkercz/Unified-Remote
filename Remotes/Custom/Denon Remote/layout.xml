@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout onlaunch="launch" onvolumedown="volumedown" onvolumeup="volumeup" onpause="playpause" onresume="playpause" lightcolor="#3B3B3B" darkcolor="#232323">
+	<tabs id="tabs" onChange="refresh">
+    	<tab text="Zone1">
+			<row>
+				<button text="On" ontap="on" />
+				<button text="Off" ontap="off" />
+			</row>
+			<row>
+				<button text="Volume Up" ontap="volumeup" />
+				<button text="Volume Down" ontap="volumedown" />
+			</row>
+			<row>
+				<slider id="volumeupdate" text="volume" progress="0" progressmax="100" onchange="volumeupdate" />
+			</row>
+			<row>
+				<button id="Input1" text="Input Game" ontap="input1" />
+				<button id="Input2" text="Input SAT" ontap="input2" />
+				<button id="Input3" text="Input Media" ontap="input3" />
+			</row>
+		</tab>
+    	<tab text="Zone2">
+			<row>
+				<button text="On" ontap="on2" />
+				<button text="Off" ontap="off2" />
+			</row>
+			<row>
+				<button text="Volume Up" ontap="volumeup2" />
+				<button text="Volume Down" ontap="volumedown2" />
+			</row>
+			<row>
+				<slider id="volumeupdate" text="volume" progress="0" progressmax="100" onchange="volumeupdate2" />
+			</row>
+			<row>
+				<button id="Input1zone2" text="Input Game" ontap="input12" />
+				<button id="Input2zone2" text="Input SAT" ontap="input22" />
+				<button id="Input3zone2" text="Input Media" ontap="input32" />
+			</row>
+		</tab>
+		<tab text="About">
+
+		</tab>
+	</tabs>
+</layout>
