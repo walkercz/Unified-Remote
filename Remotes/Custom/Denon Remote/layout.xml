@@ -3,8 +3,8 @@
 	<tabs id="tabs" onChange="refresh" color="#335566">
     	<tab text="Zone1">
 			<row>
-				<button text="On" ontap="on" />
-				<button text="Off" ontap="off" />
+				<button id="On" text="On" ontap="on"/>
+				<button id="Off" text="Off" ontap="off" />
 			</row>
 			<row>
 				<button text="Volume Up" ontap="volumeup" />
@@ -21,8 +21,8 @@
 		</tab>
     	<tab text="Zone2">
 			<row>
-				<button text="On" ontap="on2" />
-				<button text="Off" ontap="off2" />
+				<button id="OnZone2" text="On" ontap="on2" />
+				<button id="OffZone2" text="Off" ontap="off2" />
 			</row>
 			<row>
 				<button text="Volume Up" ontap="volumeup2" />
@@ -60,7 +60,7 @@
 			</row>
 		</tab>
 		<tab text="About">
-			
+
 		</tab>
 	</tabs>
 </layout>

@@ -108,6 +108,28 @@ actions.refresh = function ()
 	http.get("http://" .. settings.ip .. "/goform/formMainZone_MainZoneXmlStatusLite.xml", function (err, resp) 
 		print(err);
 		root = data.fromxml(resp);
+		power = root.children[1].text;
+		if (power == "ON") then
+			layout.On.color = "#33aa33";
+			layout.Off.color = "#222222";
+		else
+			layout.On.color = "#222222";
+			layout.Off.color = "#ff5566";
+		end
+		input = root.children[2].text;
+		if (input == settings.input1) then
+			layout.Input1.color = "#33aa33";
+			layout.Input2.color = "#222222";
+			layout.Input3.color = "#222222";
+		elseif (input == settings.input2) then
+			layout.Input1.color = "#222222";
+			layout.Input2.color = "#33aa33";
+			layout.Input3.color = "#222222";
+		elseif (input == settings.input3) then
+			layout.Input1.color = "#222222";
+			layout.Input2.color = "#222222";
+			layout.Input3.color = "#33aa33";
+		end
 		vol = root.children[4].text;
 		vol = vol + 80;
 		layout.volumeupdate.progress = vol;
@@ -115,6 +137,29 @@ actions.refresh = function ()
 	http.get("http://" .. settings.ip .. "/goform/formZone2_Zone2XmlStatusLite.xml", function (err, resp) 
 		print(err);
 		root = data.fromxml(resp);
+		power = root.children[1].text;
+		power = root.children[1].text;
+		if (power == "ON") then
+			layout.OnZone2.color = "#33aa33";
+			layout.OffZone2.color = "#222222";
+		else
+			layout.OnZone2.color = "#222222";
+			layout.OffZone2.color = "#ff5566";
+		end
+		input = root.children[2].text;
+		if (input == settings.input1) then
+			layout.Input1Zone2.color = "#33aa33";
+			layout.Input2Zone2.color = "#222222";
+			layout.Input3Zone2.color = "#222222";
+		elseif (input == settings.input2) then
+			layout.Input1Zone2.color = "#222222";
+			layout.Input2Zone2.color = "#33aa33";
+			layout.Input3Zone2.color = "#222222";
+		elseif (input == settings.input3) then
+			layout.Input1Zone2.color = "#222222";
+			layout.Input2Zone2.color = "#222222";
+			layout.Input3Zone2.color = "#33aa33";
+		end
 		vol = root.children[4].text;
 		vol = vol + 80;
 		layout.volumeupdateZone2.progress = vol;
