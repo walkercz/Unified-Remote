@@ -8,3 +8,5 @@ copy content to folder C:\ProgramData\Unified Remote\
 
 More info at https://www.unifiedremote.com
 https://www.unifiedremote.com/tutorials/how-to-create-a-custom-ir-remote
+
+![Screenshot](screen.jpg)
