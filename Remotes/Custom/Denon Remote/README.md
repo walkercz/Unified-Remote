@@ -19,6 +19,7 @@ A simple remote for Denon AVR
 * multiple zone on/off
 * multiple zone change volume
 * multiple zone change input
+* add 0.5 values to progress bar
 
 ## Screenshots
 <img src="ignore/screen.png" width="200" />

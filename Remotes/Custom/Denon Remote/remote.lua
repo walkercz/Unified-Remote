@@ -2,6 +2,7 @@
 local http = libs.http;
 -- to parse xml
 local data = libs.data;
+local vol;
 
 --/goform/formMainZone_MainZoneXml.xml
 --/goform/formMainZone_MainZoneXml.xml?ZoneName=ZONE2
@@ -33,6 +34,8 @@ actions.volumeup = function ()
 		print(err);
 		print(resp);
 	end);
+	vol = vol + 0.5;
+	layout.volumeupdate.progress = vol;
 end
 --@help Command Volume Down
 actions.volumedown = function ()
@@ -160,8 +163,8 @@ actions.refresh = function ()
 			layout.Input2Zone2.color = "#222222";
 			layout.Input3Zone2.color = "#33aa33";
 		end
-		vol = root.children[4].text;
-		vol = vol + 80;
-		layout.volumeupdateZone2.progress = vol;
+		volZone2 = root.children[4].text;
+		volZone2 = volZone2 + 80;
+		layout.volumeupdateZone2.progress = volZone2;
 	end);
 end
