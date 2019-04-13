@@ -22,7 +22,7 @@ A simple remote for Denon AVR
 * add 0.5 values to progress bar
 
 ## Screenshots
-<img src="ignore/screen.png" width="200" />
+<img src="ignore/screen.jpg" width="200" />
 
 ## Support
 Developed and maintained by **Jiri.Lastovka@outlook.com**
