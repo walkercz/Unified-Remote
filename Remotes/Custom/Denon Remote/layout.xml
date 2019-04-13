@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout onlaunch="launch" onvolumedown="volumedown" onvolumeup="volumeup" onpause="playpause" onresume="playpause" lightcolor="#3B3B3B" darkcolor="#232323">
-	<tabs id="tabs" onChange="refresh">
+	<tabs id="tabs" onChange="refresh" color="#335566">
     	<tab text="Zone1">
 			<row>
 				<button text="On" ontap="on" />
@@ -29,16 +29,38 @@
 				<button text="Volume Down" ontap="volumedown2" />
 			</row>
 			<row>
-				<slider id="volumeupdate" text="volume" progress="0" progressmax="100" onchange="volumeupdate2" />
+				<slider id="volumeupdateZone2" text="volume" progress="0" progressmax="100" onchange="volumeupdate2" />
 			</row>
 			<row>
-				<button id="Input1zone2" text="Input Game" ontap="input12" />
-				<button id="Input2zone2" text="Input SAT" ontap="input22" />
-				<button id="Input3zone2" text="Input Media" ontap="input32" />
+				<button id="Input1Zone2" text="Input Game" ontap="input12" />
+				<button id="Input2Zone2" text="Input SAT" ontap="input22" />
+				<button id="Input3Zone2" text="Input Media" ontap="input32" />
+			</row>
+		</tab>
+		<tab text="QuickActions">
+			<row>
+				<button id="Q1" text="Quick Action 1" ontap="q1" />
+				<button id="Q2" text="Quick Action 2" ontap="q2" />
+				<button id="Q3" text="Quick Action 3" ontap="q3" />
+			</row>
+			<row>
+				<button id="Q1" text="Quick Action 1" ontap="q1" />
+				<button id="Q2" text="Quick Action 2" ontap="q2" />
+				<button id="Q3" text="Quick Action 3" ontap="q3" />
+			</row>
+			<row>
+				<button id="Q1" text="Quick Action 1" ontap="q1" />
+				<button id="Q2" text="Quick Action 2" ontap="q2" />
+				<button id="Q3" text="Quick Action 3" ontap="q3" />
+			</row>
+			<row>
+				<button id="Q1" text="Quick Action 1" ontap="q1" />
+				<button id="Q2" text="Quick Action 2" ontap="q2" />
+				<button id="Q3" text="Quick Action 3" ontap="q3" />
 			</row>
 		</tab>
 		<tab text="About">
-
+			
 		</tab>
 	</tabs>
 </layout>

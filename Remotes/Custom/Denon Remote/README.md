@@ -11,6 +11,9 @@ A simple remote for Denon AVR
 * set "input1" of your Denon AVR input exmaple: GAME 
 * set "input2" of your Denon AVR input example: MPLAY
 * set "input3" of your Denon AVR input example: CBL
+* set "input1zone2" of your Denon AVR input exmaple: GAME 
+* set "input2zone2" of your Denon AVR input example: MPLAY
+* set "input3zone2" of your Denon AVR input example: CBL
 
 ## TODO
 * multiple zone on/off

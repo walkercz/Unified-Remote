@@ -1,5 +1,7 @@
 -- https://github.com/unifiedremote/Docs/blob/master/libs/http.md
 local http = libs.http;
+-- to parse xml
+local data = libs.data;
 
 --@help Command turn on the AVR
 actions.on = function ()
@@ -54,11 +56,12 @@ end
 actions.volumeupdate = function (progress)
 	print("progress was changed to " .. progress);
 	vol = progress - 80
-	layout.volumeupdate.progress = vol;
 	http.get("http://" .. settings.ip .. "/MainZone/index.put.asp?cmd0=PutMasterVolumeSet/" .. vol, function (err, resp) 
 		print(err);
 		print(resp);
 	end);
+	vol = vol + 80;
+	layout.volumeupdate.progress = vol;
 end
 --@help Command 9 TODO: on launch read current values and update after 10s
 actions.launch = function ()
@@ -71,8 +74,39 @@ actions.launch = function ()
 	vol = -40
 	layout.volumeupdate.progress = vol;
 	tid = libs.timer.timeout(launch, 10000);
+
+	http.get("http://" .. settings.ip .. "/goform/formMainZone_MainZoneXmlStatusLite.xml", function (err, resp) 
+		print(err);
+		root = data.fromxml(resp);
+		vol = root.children[4].text;
+		vol = vol + 80;
+		layout.volumeupdate.progress = vol;
+	end);
+	http.get("http://" .. settings.ip .. "/goform/formZone2_Zone2XmlStatusLite.xml", function (err, resp) 
+		print(err);
+		root = data.fromxml(resp);
+		vol = root.children[4].text;
+		vol = vol + 80;
+		layout.volumeupdateZone2.progress = vol;
+	end);
 end
 --@help Command 10 Toggle playback state of media center
 actions.playpause = function()
 	keyboard.press("mediaplaypause");
+end
+actions.refresh = function ()
+	http.get("http://" .. settings.ip .. "/goform/formMainZone_MainZoneXmlStatusLite.xml", function (err, resp) 
+		print(err);
+		root = data.fromxml(resp);
+		vol = root.children[4].text;
+		vol = vol + 80;
+		layout.volumeupdate.progress = vol;
+	end);
+	http.get("http://" .. settings.ip .. "/goform/formZone2_Zone2XmlStatusLite.xml", function (err, resp) 
+		print(err);
+		root = data.fromxml(resp);
+		vol = root.children[4].text;
+		vol = vol + 80;
+		layout.volumeupdateZone2.progress = vol;
+	end);
 end
