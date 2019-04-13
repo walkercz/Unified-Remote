@@ -3,6 +3,16 @@ local http = libs.http;
 -- to parse xml
 local data = libs.data;
 
+--/goform/formMainZone_MainZoneXml.xml
+--/goform/formMainZone_MainZoneXml.xml?ZoneName=ZONE2
+--/goform/formNetAudio_StatusXml.xml
+--/goform/formMainZone_MainZoneXmlStatus.xml
+--/goform/formZone2_Zone2XmlStatus.xml
+--/goform/formMainZone_MainZoneXmlStatusLite.xml
+--/goform/formZone2_Zone2XmlStatusLite.xml
+
+
+
 --@help Command turn on the AVR
 actions.on = function ()
 	http.get("http://" .. settings.ip .. "/MainZone/index.put.asp?cmd0=PutZone_OnOff%2FON", function (err, resp) 
