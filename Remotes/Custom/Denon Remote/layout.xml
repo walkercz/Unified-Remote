@@ -15,7 +15,7 @@
 			</row>
 			<row>
 				<button id="Input1" text="Input Game" ontap="input1" />
-				<button id="Input2" text="Input SAT" ontap="input2" />
+				<button id="Input2" text="Input SAT/CBL" ontap="input2" />
 				<button id="Input3" text="Input Media" ontap="input3" />
 			</row>
 		</tab>
